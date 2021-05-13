@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: restservicesdeploy
+spec:
+  selector:
+    matchLabels:
+      app: restservicesdeploy
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: restservicesdeploy
+    spec:
+      containers:
+      - name: restservicesdeploy
+        image: asalome01/enterpriseoka
+        ports:
+        - containerPort: 5001
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: restservices
+  labels:
+    app: restservices
+spec:
+  type: NodePort
+  ports:
+  - port: 5001
+    nodePort : 30780 
+  selector:
+    app: restservicesdeploy  
