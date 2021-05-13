@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: restservicesdeploy
-        image: asalome01/enterpriseoka
+        image: asalome01/enterpriseoka:v2.#{Build.Buildid}#
         ports:
         - containerPort: 5001
 ---
