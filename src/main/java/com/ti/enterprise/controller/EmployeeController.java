@@ -14,8 +14,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import com.ti.enterprise.dao.EmployeeDAO;
 import com.ti.enterprise.dao.Employees;
 import com.ti.enterprise.entity.Employee;
-//CONTROLADOR .......
-@RestController
+//CONTROLADOR ..............
 @RequestMapping(path = "/employees")
 public class EmployeeController 
 {
